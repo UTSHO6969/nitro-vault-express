@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -66,6 +65,18 @@ const Products = () => {
               </CardFooter>
             </Card>
           ))}
+        </div>
+
+        {/* About Section */}
+        <div className="bg-glass-primary backdrop-blur-md border-t border-primary/20 py-16 mt-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neon-purple to-neon-blue mb-6">
+              About NitroVault
+            </h2>
+            <p className="text-gray-300 max-w-3xl mx-auto">
+              NitroVault is your trusted destination for Discord Nitro subscriptions. We provide instant delivery, competitive prices, and exceptional customer service. Our platform ensures a secure and seamless experience for all your Discord premium needs.
+            </p>
+          </div>
         </div>
       </div>
     </div>
