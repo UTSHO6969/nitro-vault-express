@@ -1,11 +1,12 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Menu, X, ShoppingCart, User } from "lucide-react";
 import { Button } from "./ui/button";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <nav className="fixed w-full z-50 bg-glass-primary backdrop-blur-md border-b border-primary/20">
@@ -33,7 +34,7 @@ const Navbar = () => {
             <Button variant="ghost" size="icon" className="hover:bg-primary/20">
               <ShoppingCart className="h-5 w-5 text-white" />
             </Button>
-            <Button variant="ghost" size="icon" className="hover:bg-primary/20">
+            <Button variant="ghost" size="icon" className="hover:bg-primary/20" onClick={() => navigate("/auth")}>
               <User className="h-5 w-5 text-white" />
             </Button>
           </div>
@@ -74,6 +75,13 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
             >
               Testimonials
+            </Link>
+            <Link
+              to="/auth"
+              className="block px-3 py-2 text-white hover:text-primary transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              Sign In
             </Link>
           </div>
         </div>
