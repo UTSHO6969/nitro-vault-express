@@ -37,6 +37,31 @@ const Index = () => {
     }
   ];
 
+  // New products data with updated prices
+  const newProducts = [
+    {
+      id: 1,
+      name: "Discord Nitro",
+      price: 5.5,
+      description: "Essential Discord premium features at an affordable price",
+      imageUrl: "https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png"
+    },
+    {
+      id: 2,
+      name: "Discord Nitro 1 Year",
+      price: 50,
+      description: "A full year of Discord premium features at a special price",
+      imageUrl: "https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png"
+    },
+    {
+      id: 3,
+      name: "Discord Decorations",
+      price: null,
+      description: "Customize your Discord experience with unique decorations. Custom pricing based on selection.",
+      imageUrl: "https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png"
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       <div className="relative pt-32 pb-20 sm:pt-40">
@@ -127,6 +152,46 @@ const Index = () => {
                   </div>
                 </div>
               ))}
+            </div>
+            
+            {/* New Products Section */}
+            <div className="mt-24 pt-16 border-t border-primary/20">
+              <div className="mb-12">
+                <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neon-purple to-neon-blue">
+                  Special Offers
+                </h2>
+                <p className="text-gray-300 mt-4 max-w-3xl mx-auto">
+                  Limited time deals on our most popular Discord products
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {newProducts.map((product) => (
+                  <div key={product.id} className="glass-card rounded-xl overflow-hidden transition-transform hover:scale-105">
+                    <div className="h-48 bg-primary/10 flex items-center justify-center">
+                      <img 
+                        src={product.imageUrl} 
+                        alt={product.name} 
+                        className="h-24 w-24 object-contain" 
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-semibold text-white mb-2">{product.name}</h3>
+                      <p className="text-gray-300 mb-4 text-sm">{product.description}</p>
+                      <div className="flex justify-between items-center">
+                        <span className="text-2xl font-bold text-primary">
+                          {product.price ? `$${product.price.toFixed(2)}` : 'Custom Price'}
+                        </span>
+                        <Link to="/products">
+                          <Button className="bg-primary/20 hover:bg-primary/30 text-white">
+                            View Details
+                          </Button>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
             
             <div className="mt-12">
