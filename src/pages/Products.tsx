@@ -1,82 +1,76 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { ArrowRight } from "lucide-react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Products = () => {
   const [products] = useState([
     {
       id: 1,
-      name: "Discord Nitro Basic",
-      description: "Unlock essential Discord perks",
-      price: "$4.99",
-      features: ["Custom emoji anywhere", "Animated avatars", "30MB file uploads"],
-      badge: "Popular"
+      name: "Discord Nitro",
+      description: "Essential Discord premium features at an affordable price",
+      price: "$5.50",
+      badge: null
     },
     {
       id: 2,
-      name: "Discord Nitro Premium",
-      description: "The complete Discord experience",
-      price: "$9.99",
-      features: ["Server boosts included", "HD video streaming", "100MB file uploads"],
-      badge: "Best Value"
+      name: "Discord Nitro 1 Year",
+      description: "A full year of Discord premium features at a special price",
+      price: "$50.00",
+      badge: null
+    },
+    {
+      id: 3,
+      name: "Discord Decorations",
+      description: "Customize your Discord experience with unique decorations. Custom pricing based on selection.",
+      price: "Custom Price",
+      badge: null
     }
   ]);
 
   return (
-    <div className="min-h-screen pt-24 pb-12">
+    <div className="min-h-screen pt-24 pb-12 bg-[#161b33]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neon-purple to-neon-blue mb-4">
-            Available Subscriptions
+          <h1 className="text-5xl font-bold text-[#5865F2] mb-4">
+            Special Offers
           </h1>
-          <p className="text-gray-300">
-            Choose the perfect Discord Nitro subscription for you
+          <p className="text-gray-300 text-lg">
+            Limited time deals on our most popular Discord products
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {products.map((product) => (
-            <Card key={product.id} className="bg-glass-primary backdrop-blur-md border border-primary/20 hover:border-primary/40 transition-all duration-300">
+            <Card key={product.id} className="bg-[#212552] border-none text-white shadow-xl overflow-hidden">
+              <div className="h-48 bg-[#2a2f5a] flex items-center justify-center">
+                <img 
+                  src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png" 
+                  alt={product.name} 
+                  className="h-24 w-24 object-contain" 
+                />
+              </div>
               <CardHeader>
-                {product.badge && (
-                  <Badge variant="secondary" className="self-start mb-2">
-                    {product.badge}
-                  </Badge>
-                )}
-                <CardTitle className="text-2xl font-bold text-white">{product.name}</CardTitle>
-                <CardDescription className="text-gray-300">{product.description}</CardDescription>
+                <CardTitle className="text-2xl font-bold text-white text-center">{product.name}</CardTitle>
+                <CardDescription className="text-gray-300 text-center">{product.description}</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold text-white mb-4">{product.price}<span className="text-sm text-gray-400">/month</span></div>
-                <ul className="space-y-2">
-                  {product.features.map((feature, index) => (
-                    <li key={index} className="text-gray-300 flex items-center">
-                      <span className="mr-2">•</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                <div className="text-3xl font-bold text-[#5865F2] text-center mb-4">{product.price}</div>
               </CardContent>
-              <CardFooter>
-                <Button className="w-full bg-primary hover:bg-primary-hover text-white transition-all duration-300">
-                  Get Started
+              <CardFooter className="flex justify-center">
+                <Button className="bg-[#5865F2] hover:bg-[#4752c4] px-6">
+                  View Details
                 </Button>
               </CardFooter>
             </Card>
           ))}
         </div>
 
-        {/* About Section */}
-        <div className="bg-glass-primary backdrop-blur-md border-t border-primary/20 py-16 mt-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neon-purple to-neon-blue mb-6">
-              About NitroVault
-            </h2>
-            <p className="text-gray-300 max-w-3xl mx-auto">
-              NitroVault is your trusted destination for Discord Nitro subscriptions. We provide instant delivery, competitive prices, and exceptional customer service. Our platform ensures a secure and seamless experience for all your Discord premium needs.
-            </p>
-          </div>
+        <div className="mt-12 flex justify-center">
+          <Button className="bg-[#353a6e] hover:bg-[#424680] text-white flex items-center gap-2 px-6 py-3">
+            View All Products <ArrowRight className="h-5 w-5" />
+          </Button>
         </div>
       </div>
     </div>
