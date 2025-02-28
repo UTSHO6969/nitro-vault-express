@@ -1,7 +1,7 @@
 
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CreditCard, Zap, Clock, Discord } from "lucide-react";
+import { ArrowRight, CreditCard, Zap, Clock, MessageSquare } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -55,7 +55,7 @@ const Index = () => {
               <a href="https://discord.gg/QNg9TNZ9" target="_blank" rel="noopener noreferrer">
                 <Button className="bg-[#5865F2] hover:bg-[#4752c4] text-white px-8 py-6 rounded-lg transition-all duration-300 transform hover:scale-105">
                   Join our Discord
-                  <Discord className="ml-2 h-5 w-5" />
+                  <MessageSquare className="ml-2 h-5 w-5" />
                 </Button>
               </a>
             </div>
