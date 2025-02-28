@@ -86,37 +86,6 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Features Section */}
-          <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-6 glass-card rounded-xl">
-              <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                <Clock className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Instant Delivery</h3>
-              <p className="text-gray-300">
-                Get your subscription codes delivered instantly after purchase.
-              </p>
-            </div>
-            <div className="p-6 glass-card rounded-xl">
-              <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                <CreditCard className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Secure Payments</h3>
-              <p className="text-gray-300">
-                All transactions are encrypted and secure with multiple payment options.
-              </p>
-            </div>
-            <div className="p-6 glass-card rounded-xl">
-              <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                <Zap className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-2">24/7 Support</h3>
-              <p className="text-gray-300">
-                Our customer support team is available around the clock to assist you.
-              </p>
-            </div>
-          </div>
-
           {/* Products Section */}
           <div className="mt-24">
             <div className="mb-12">
@@ -200,6 +169,37 @@ const Index = () => {
                   View All Products <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
+            </div>
+          </div>
+
+          {/* Features Section - Moved below Products */}
+          <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-6 glass-card rounded-xl">
+              <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                <Clock className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Instant Delivery</h3>
+              <p className="text-gray-300">
+                Get your subscription codes delivered instantly after purchase.
+              </p>
+            </div>
+            <div className="p-6 glass-card rounded-xl">
+              <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                <CreditCard className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Secure Payments</h3>
+              <p className="text-gray-300">
+                All transactions are encrypted and secure with multiple payment options.
+              </p>
+            </div>
+            <div className="p-6 glass-card rounded-xl">
+              <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                <Zap className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">24/7 Support</h3>
+              <p className="text-gray-300">
+                Our customer support team is available around the clock to assist you.
+              </p>
             </div>
           </div>
 
