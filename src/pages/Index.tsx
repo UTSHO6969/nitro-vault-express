@@ -1,7 +1,7 @@
 
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CreditCard, Zap, Clock } from "lucide-react";
+import { ArrowRight, CreditCard, Zap, Clock, Discord } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -11,6 +11,31 @@ const Index = () => {
       document.body.style.background = "";
     };
   }, []);
+
+  // Popular product data
+  const popularProducts = [
+    {
+      id: 1,
+      name: "Discord Nitro 1 Month",
+      price: 9.99,
+      description: "Upgrade your Discord experience for 1 month",
+      imageUrl: "https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png"
+    },
+    {
+      id: 2,
+      name: "Discord Nitro 1 Year",
+      price: 99.99,
+      description: "Enjoy Discord premium features for a full year",
+      imageUrl: "https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png"
+    },
+    {
+      id: 3,
+      name: "Discord Nitro Classic",
+      price: 4.99,
+      description: "Basic premium features for Discord users",
+      imageUrl: "https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png"
+    }
+  ];
 
   return (
     <div className="min-h-screen">
@@ -27,12 +52,12 @@ const Index = () => {
               Get instant access to Discord Nitro and premium subscriptions. Enhance your Discord journey with exclusive perks and features.
             </p>
             <div className="flex justify-center gap-4">
-              <Link to="/products">
-                <Button className="bg-primary hover:bg-primary-hover text-white px-8 py-6 rounded-lg transition-all duration-300 transform hover:scale-105">
-                  Browse Products
-                  <ArrowRight className="ml-2 h-5 w-5" />
+              <a href="https://discord.gg/QNg9TNZ9" target="_blank" rel="noopener noreferrer">
+                <Button className="bg-[#5865F2] hover:bg-[#4752c4] text-white px-8 py-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                  Join our Discord
+                  <Discord className="ml-2 h-5 w-5" />
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -64,6 +89,52 @@ const Index = () => {
               <p className="text-gray-300">
                 Our customer support team is available around the clock to assist you.
               </p>
+            </div>
+          </div>
+
+          {/* Products Section */}
+          <div className="mt-24">
+            <div className="mb-12">
+              <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neon-purple to-neon-blue">
+                Popular Products
+              </h2>
+              <p className="text-gray-300 mt-4 max-w-3xl mx-auto">
+                Browse our selection of premium Discord subscriptions and enhance your Discord experience today.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {popularProducts.map((product) => (
+                <div key={product.id} className="glass-card rounded-xl overflow-hidden transition-transform hover:scale-105">
+                  <div className="h-48 bg-primary/10 flex items-center justify-center">
+                    <img 
+                      src={product.imageUrl} 
+                      alt={product.name} 
+                      className="h-24 w-24 object-contain" 
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-white mb-2">{product.name}</h3>
+                    <p className="text-gray-300 mb-4 text-sm">{product.description}</p>
+                    <div className="flex justify-between items-center">
+                      <span className="text-2xl font-bold text-primary">${product.price.toFixed(2)}</span>
+                      <Link to="/products">
+                        <Button className="bg-primary/20 hover:bg-primary/30 text-white">
+                          View Details
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <div className="mt-12">
+              <Link to="/products">
+                <Button className="bg-primary/20 hover:bg-primary/30 text-white px-6 py-3">
+                  View All Products <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
             </div>
           </div>
 
